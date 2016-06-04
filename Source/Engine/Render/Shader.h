@@ -1,5 +1,10 @@
 #pragma once
-#include "Render.h"
+#include <fstream>
+#include <string>
+#include <vector>
+using namespace std;
+// Include GLEW. Always include it before gl.h and glfw.h
+#include <GL/glew.h>
 
 class Shader
 {

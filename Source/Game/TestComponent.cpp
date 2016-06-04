@@ -7,6 +7,7 @@ TestComponent::TestComponent() {
 
 void TestComponent::Update() {
 
-	Debug::Log(("TestComponent Updated: " + to_string(++update_index) + "\n").c_str());
+	//
+	Debug::Log("TestComponent Updated: X - " + to_string(Input::X()) + ", Y - " + to_string(Input::Y()) + "\n");
 }
 

@@ -1,11 +1,7 @@
 #pragma once
-#include <vector>
-#include <string>
-#include <fstream>
-using namespace std;
+#include "Shader.h"
+#include "Texture.h"
 
-// Include GLEW. Always include it before gl.h and glfw.h
-#include <GL/glew.h>
 #include "../../Pathes.h"
 #include "../Debug.h"
 
@@ -14,9 +10,6 @@ using namespace std;
 #include <glm/gtx/transform.hpp> // after <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 using namespace glm;
-
-#include "Shader.h"
-#include "Texture.h"
 
 //-----------------------------
 

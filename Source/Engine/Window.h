@@ -1,9 +1,9 @@
 #pragma once
 #include <omp.h>
 
-#include "Game.h"
 #include "Render\Render.h"
 #include "Input.h"
+#include "Game.h"
 
 class Window
 {
@@ -19,5 +19,6 @@ public:
 	Window();
 	void Loop();
 	void Update();
+	~Window();
 };
 

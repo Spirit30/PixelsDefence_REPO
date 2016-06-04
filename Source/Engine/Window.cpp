@@ -41,12 +41,15 @@ Window::Window() : update_threshold(1.0f / target_FPS)
 	}
 	//-----------------------------
 
-	// Ensure we can capture the escape key being pressed below
-	glfwSetInputMode(window, GLFW_STICKY_KEYS, GL_TRUE);
+	
 
 	//-----------------------------
-	render = new Render();
 
+	//Init Input
+	Input::Init(window, Render::WIDTH, Render::HEIGHT);
+	//Init Render
+	render = new Render();
+	//Start Updating
 	Loop();
 }
 
@@ -57,8 +60,9 @@ void Window::Loop() {
 	double b_time = 0.0;
 
 	// Check if the ESC key was pressed or the window was closed
-	while(
-		glfwGetKey(window, GLFW_KEY_ESCAPE) != GLFW_PRESS &&
+	while (
+		//glfwGetKey(window, GLFW_KEY_ESCAPE) != GLFW_PRESS &&
+		!Input::Pressed(GLFW_KEY_ESCAPE) &&
 		glfwWindowShouldClose(window) == 0) {
 
 			b_time = omp_get_wtime();
@@ -76,7 +80,7 @@ void Window::Loop() {
 void Window::Update() {
 
 	//Input
-	glfwPollEvents();
+	Input::Update(window);
 
 	//Update
 	game.Update();
@@ -84,4 +88,9 @@ void Window::Update() {
 	//Draw
 	render->Draw();
 	glfwSwapBuffers(window);
+}
+
+Window::~Window() {
+
+	delete render;
 }
