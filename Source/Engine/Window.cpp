@@ -22,7 +22,7 @@ Window::Window() : update_threshold(1.0f / target_FPS)
 																   //Create a windowed mode window and its OpenGL context
 																   //-----------------------------
 	
-	if (!(window = glfwCreateWindow(Render::WIDTH, Render::HEIGHT, "PixelsDefence", NULL, NULL)))
+	if (!(window = glfwCreateWindow(Camera::WIDTH, Camera::HEIGHT, "PixelsDefence", NULL, NULL)))
 	{
 		glfwTerminate();
 		Debug::Log("Failed to initialize GLFW\n");
@@ -46,7 +46,7 @@ Window::Window() : update_threshold(1.0f / target_FPS)
 	//-----------------------------
 
 	//Init Input
-	Input::Init(window, Render::WIDTH, Render::HEIGHT);
+	Input::Init(window, Camera::WIDTH, Camera::HEIGHT);
 	//Init Render
 	render = new Render();
 	//Start Updating

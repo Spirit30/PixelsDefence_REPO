@@ -2,7 +2,6 @@
 #include <omp.h>
 
 #include "Render\Render.h"
-#include "Input.h"
 #include "Game.h"
 
 class Window
